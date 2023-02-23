@@ -5,7 +5,7 @@ DOMAIN-SUFFIX,bytedance.com,REJECT
 DOMAIN-SUFFIX,pglstatp-toutiao.com,REJECT
 DOMAIN,novelapi.baidu.com,REJECT
 DOMAIN-SUFFIX,app-measurement.com,REJECT
-#DOMAIN,v.gdt.qq.com,REJECT
+# DOMAIN,v.gdt.qq.com,REJECT
 URL-REGEX,^https:\/\/alogs\.umengcloud\.com\/app_logs$,REJECT
 DOMAIN-SUFFIX,shenbabao.com,REJECT
 DOMAIN-SUFFIX,ocsp.pki.goog,REJECT
@@ -54,4 +54,4 @@ DOMAIN,adim.pinduoduo.com,REJECT
 ^https?:\/\/.+\.ugdtimg\.com\/ads_svp_video__.+\.f.+\.(png|jpeg|jpg|mp4)\?.+ - reject
 
 [MITM]
-hostname = %APPEND% *.ugdtimg.com, *.qq.com, *.googleapis-cn.com, *.googleadservices.com, *.doubleclick.net, *.umengcloud.com, *.ugdtimg.com, *.pglstatp-toutiao.com, *.umeng.com, *.shenbabao.com, *.pangolin-sdk-toutiao.com, *.pangolin-sdk-toutiao.com, *.pinduoduo.com
+hostname = %APPEND% *.ugdtimg.com,  *.googleapis-cn.com, *.googleadservices.com, *.doubleclick.net, *.umengcloud.com, *.ugdtimg.com, *.pglstatp-toutiao.com, *.umeng.com, *.shenbabao.com, *.pangolin-sdk-toutiao.com, *.pangolin-sdk-toutiao.com, *.pinduoduo.com
