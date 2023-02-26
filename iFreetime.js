@@ -1,57 +1,26 @@
 #!name=爱阅三秒跳广告
-#!desc="卡广告领奖励,请开启MITM或者HTTPS解密(更新日期:2022.11.27 v2)"
+#!desc="卡广告领奖励,请开启MITM或者HTTPS解密(更新日期:2023.02.26)"
 [Rule]
+# DOMAIN,v.gdt.qq.com,REJECT
+DOMAIN,video-dsp.pddpic.com,REJECT
+DOMAIN,adim.pinduoduo.com,REJECT
+DOMAIN,images.pinduoduo.com,REJECT
 DOMAIN-SUFFIX,bytedance.com,REJECT
 DOMAIN-SUFFIX,pglstatp-toutiao.com,REJECT
-DOMAIN,novelapi.baidu.com,REJECT
 DOMAIN-SUFFIX,app-measurement.com,REJECT
-#DOMAIN,v.gdt.qq.com,REJECT
-URL-REGEX,^https:\/\/alogs\.umengcloud\.com\/app_logs$,REJECT
 DOMAIN-SUFFIX,shenbabao.com,REJECT
-DOMAIN-SUFFIX,ocsp.pki.goog,REJECT
 DOMAIN-SUFFIX,umeng.com,REJECT
+DOMAIN-SUFFIX,umengcloud.com,REJECT
 DOMAIN-SUFFIX,bytescm.com,REJECT
 DOMAIN-SUFFIX,ctobsnssdk.com,REJECT
 DOMAIN-SUFFIX,snssdk.com,REJECT
-DOMAIN,video-dsp.pddpic.com,REJECT
-DOMAIN,adim.pinduoduo.com,REJECT
-# DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT
-# DOMAIN-SUFFIX,pinduoduo.com,REJECT
-# URL-REGEX,^https:\/\/alogs\.umeng\.com\/app_logs$,REJECT
-# DOMAIN-SUFFIX,umeng.com,REJECT
-# DOMAIN,v3-be-pack.pglstatp-toutiao.com,REJECT
-
-[URL Rewrite]
-# Umeng
-^https?:\/\/alogs\.(umeng|umengcloud)\.com\/app_logs - reject
-# toutiao
-^https?:\/\/.+\.pglstatp-toutiao\.com\/web\.business\.image - reject
-# ^https?:\/\/.+\.pglstatp-toutiao\.com\/obj\/ad-pattern\/renderer\/package\.json\?.+ - reject
-# ^https?:\/\/.+\.pglstatp-toutiao\.com\/obj\/ad-pattern\/renderer\/.+\/.+\.js - reject
-^https?:\/\/.+\.pglstatp-toutiao\.com\/.+\/.+\/video\/tos\/cn\/.+\/.+\/.+\.mp4 - reject
-# ^https?:\/\/.+\.pglstatp-toutiao\.com\/obj\/union-fe-nc\/endcard\/sdk\/.+\.js\?.+ - reject
-^https?:\/\/.+\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/stats\/batch\/?.+ - reject
-^https?:\/\/.+\.pangolin-sdk-toutiao\.com\/union\/endcard\/.+\/\?.+ - reject
-# ^https?:\/\/.+\.pangolin-sdk-toutiao-b\.com\/service\/2\/app_log\/\?.+ - reject
-# ^https?:\/\/.+\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/.+ - reject
-^https?:\/\/.+\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/settings\/?.+ - reject
-# ^https?:\/\/.+\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/get_ads\/\?.+ - reject
-# pinduoduo
-^http?:\/\/.+\.pinduoduo\.com\/marketing_api\/.+\/.+\.(png|jpeg|jpg|mp4) - reject
-# google
-^https?:\/\/googleads\..+\.doubleclick\.net\/mads\/static\/mad\/sdk\/native\/.+\.js - reject
-^https?:\/\/.+\.googleadservices\.com\/pagead\/.+\?.+ - reject
-^https?:\/\/.+\/doubleclick\.net\/.+ - reject
-# ^https?:\/\/.+\.googleapis-cn\.com\/v4\/threatListUpdates:fetch\?.+ - reject
-# QQ
-#^https?:\/\/.+\.gdt.qq.com\/.+\.fcg\?.+ - reject
-# ^https?:\/\/dp3.qq.com\/attr\?.+ - reject
-# ^https?:\/\/otheve.beacon.qq.com\/.+\/.+\?.+ - reject
-# Unknow
-# ^https?:\/\/.+\.gdtimg\.com\/union\/res\/union_temp_v2\/page\/ANTempMob\/tempMob\..+\.package\.json -reject header
-^https?:\/\/.+\.ugdtimg\.com\/gdt\/0\/.+\.(png|jpeg|jpg|mp4) - reject
-# ^https?:\/\/.+\.ugdtimg\.com\/141\/20204\/snscosdownload\/.+\/reserved\/.+ - reject
-^https?:\/\/.+\.ugdtimg\.com\/ads_svp_video__.+\.f.+\.(png|jpeg|jpg|mp4)\?.+ - reject
-
+URL-REGEX,^https?:\/\/.+\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/(stats|settings)\/,REJECT
+URL-REGEX,^https?:\/\/.+\.pangolin-sdk-toutiao\.com\/union\/endcard\/.+\/\?.+,REJECT
+URL-REGEX,^https?:\/\/.+\.pinduoduo\.com\/marketing_api\/.+\/.+\.(png|jpeg|jpg|mp4),REJECT
+URL-REGEX,^https?:\/\/googleads\..+\.doubleclick\.net\/mads\/(gma|static\/mad\/sdk\/native).+,REJECT
+URL-REGEX,^https?:\/\/.+\.googleadservices\.com\/pagead\/.+\?.+,REJECT
+URL-REGEX,^https?:\/\/.+\.gdt.qq.com\/.+\.fcg\?.+,REJECT
+URL-REGEX,^https?:\/\/.+\.ugdtimg\.com\/gdt\/0\/.+\.(png|jpeg|jpg|mp4),REJECT
+URL-REGEX,^https?:\/\/.+\.ugdtimg\.com\/ads_svp_video__.+\.f.+\.(png|jpeg|jpg|mp4)\?.+,REJECT
 [MITM]
-hostname = %APPEND% *.ugdtimg.com, *.qq.com, *.googleapis-cn.com, *.googleadservices.com, *.doubleclick.net, *.umengcloud.com, *.ugdtimg.com, *.pglstatp-toutiao.com, *.umeng.com, *.shenbabao.com, *.pangolin-sdk-toutiao.com, *.pangolin-sdk-toutiao.com, *.pinduoduo.com
+hostname = %APPEND% *.gdt.qq.com,*.pinduoduo.com,video-dsp.pddpic.com,*.pglstatp-toutiao.com,*.pangolin-sdk-toutiao.com,*.doubleclick.net,*.googleadservices.com,*.ugdtimg.com
