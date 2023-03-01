@@ -1,7 +1,7 @@
 #!name=爱阅三秒跳广告
 #!desc="卡广告领奖励,请开启MITM或者HTTPS解密(更新日期:2023.03.01)"
 [Rule]
-DOMAIN,v.gdt.qq.com,REJECT
+# DOMAIN,v.gdt.qq.com,REJECT
 DOMAIN,video-dsp.pddpic.com,REJECT
 DOMAIN,adim.pinduoduo.com,REJECT
 DOMAIN,images.pinduoduo.com,REJECT
