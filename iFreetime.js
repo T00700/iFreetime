@@ -24,6 +24,6 @@ DOMAIN-SUFFIX,snssdk.com,REJECT
 ^https?:\/\/.+\.ugdtimg\.com\/gdt\/0\/.+\.(png|jpeg|jpg|mp4) _ REJECT-200
 ^https?:\/\/.+\.ugdtimg\.com\/ads_svp_video__.+\.f.+\.(png|jpeg|jpg|mp4)\?.+ _ REJECT-200
 [Script]
-广告联盟json = type=http-response,script-path=https://gist.githubusercontent.com/Mattraks/b243f3ac4b3184f102bd4d2ba5b8698d/raw/adsense.js,pattern=^https:\/\/(api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/get_ads|open\.e\.kuaishou\.com\/rest\/e\/v3\/open\/univ$|mi\.gdt\.qq\.com\/gdt_mview\.fcg\?),requires-body=true,enable=true
+广告联盟json = type=http-response,script-path=https://raw.githubusercontent.com/T00700/iFreetime/main/adsense.js,pattern=^https:\/\/(api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/get_ads|open\.e\.kuaishou\.com\/rest\/e\/v3\/open\/univ$|mi\.gdt\.qq\.com\/gdt_mview\.fcg\?),requires-body=true,enable=true
 [MITM]
 hostname = %APPEND% *.gdt.qq.com,*.pinduoduo.com,video-dsp.pddpic.com,*.pglstatp-toutiao.com,*.pangolin-sdk-toutiao.com,*.doubleclick.net,*.googleadservices.com,*.ugdtimg.com
